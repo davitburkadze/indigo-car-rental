@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Syne' rel='stylesheet'>
+    <title data-lang-key="title">Indigo Car Rental</title>
+    <style>
+        body {
+            font-family: 'Syne', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(180deg, #1A1A1A, #000000);
+            color: #fff;
+        }
+
+        header {
+            background: linear-gradient(180deg, #1A1A1A, #000000);
+            color: white;
+            padding: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        header h1 {
+            color: #7B5CD6;
+            margin: 0;
+            font-size: 1.8rem;
+        }
+
+        body h1 {
+            color: #7B5CD6;
+            margin: 2rem;
+        }
+
+        body p {
+            font-size: 1.3rem;
+            line-height: 1.6;
+        }
+
+        nav {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        nav a:hover {
+            color: #FFD700;
+        }
+
+        .language-switcher {
+            background-color: #1A1A1A;
+            color: white;
+            border: 1px solid #7B5CD6;
+            padding: 0.5rem;
+            font-size: 1rem;
+            font-family: 'Syne', sans-serif;
+            cursor: pointer;
+        }
+
+        .language-switcher:hover {
+            background-color: #7B5CD6;
+            color: #FFD700;
+        }
+
+        section {
+            padding: 2rem;
+        }
+
+        #home {
+            background: linear-gradient(180deg, #1A1A1A, #000000);
+            text-align: center;
+        }
+
+        .image-container {
+            display: flex;
+            justify-content: center;
+            gap: 0;
+            margin-bottom: 1rem;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .image-container img:hover, .gallery-grid img:hover, .offer-right img:hover {
+            transform: scale(1.05);
+            transition: transform 0.3s ease;
+        }
+
+        #vehicles {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .vehicles-left {
+            display: flex;
+            flex: 1;
+        }
+
+        .vehicles-right {
+            display: flex;
+            flex: 1;
+        }
+
+        .vehicles-inside {
+            margin-left: 10%;
+            margin-right: 10%;
+        }
+
+        .vehicles-inside ul {
+            list-style: disc;
+            text-align: left;
+            padding-left: 1.5rem;
+        }
+
+        .vehicles-inside ul li {
+            font-size: 1.4rem;
+            line-height: 1.6;
+            margin-bottom: 0.8rem;
+        }
+
+        .vehicle-subheading {
+            font-size: 1.4rem;
+            margin: 1rem 0;
+        }
+
+        #contact {
+            text-align: center;
+        }
+
+        #contact p {
+            font-size: 1.1rem;
+            margin: 0.5rem 0;
+        }
+
+        #contact a {
+            color: #ccc;
+            text-decoration: none;
+        }
+
+        #contact a:hover {
+            color: #FFD700;
+        }
+
+        .mt-5 {
+            margin-top: 5rem;
+        }
+
+        #offer {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .offer-left {
+            flex: 1;
+        }
+
+        .offer-left-inside {
+            margin-left: 20%;
+            margin-right: 20%;
+            flex: 1;
+        }
+
+        .offer-left-inside p {
+            margin-bottom: 1.5rem;
+        }
+
+        .offer-right {
+            flex: 1;
+        }
+
+        .offer-right img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        .book-now {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: #7B5CD6;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        .book-now:hover {
+            background-color: #FFD700;
+            color: #000000;
+        }
+
+        #home-description {
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+
+        .home-description-right {
+            flex: 1;
+        }
+
+        .home-description-right-inside {
+            margin-left: 20%;
+            margin-right: 20%;
+            flex: 1;
+        }
+
+        .home-description-left {
+            flex: 1;
+        }
+
+        .home-description-left img {
+            width: 100%;
+            height: 500px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        #gallery {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            margin-top: 1rem;
+        }
+
+        .gallery-grid img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            object-position: top;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+                padding: 1rem;
+            }
+
+            header h1 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+
+            body h1 {
+                font-size: 1.6rem;
+                margin: 1rem;
+            }
+
+            body p {
+                font-size: 1rem;
+            }
+
+            .vehicles-inside ul li {
+                font-size: 1.2rem;
+            }
+
+            .image-container {
+                flex-direction: column;
+            }
+
+            .image-container img {
+                height: 200px;
+            }
+
+            #home-description {
+                flex-direction: column;
+            }
+
+            .home-description-left img {
+                height: 300px;
+            }
+
+            .home-description-right-inside {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            #vehicles {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .vehicles-inside {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .vehicle-subheading {
+                font-size: 1.2rem;
+            }
+
+            #offer {
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            .offer-left-inside {
+                margin-left: 5%;
+                margin-right: 5%;
+            }
+
+            .offer-right img {
+                height: 300px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 0.5rem;
+            }
+
+            .gallery-grid img {
+                height: 200px;
+            }
+
+            #contact p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 1.2rem;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            body h1 {
+                font-size: 1.4rem;
+            }
+
+            body p {
+                font-size: 1rem;
+            }
+
+            .vehicles-inside ul li {
+                font-size: 1.1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .image-container img {
+                height: 150px;
+            }
+
+            .home-description-left img {
+                height: 200px;
+            }
+
+            .offer-right img {
+                height: 200px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .gallery-grid img {
+                height: 150px;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <h1 data-lang-key="title">Indigo Car Rental</h1>
+    <nav>
+        <a href="#home" data-lang-key="nav_home">Home</a>
+        <a href="#contact" data-lang-key="nav_contact">Contact</a>
+        <a href="cars.html" data-lang-key="nav_cars">Cars</a>
+        <select class="language-switcher" onchange="changeLanguage(this.value)" aria-label="Select Language">
+            <option value="en">English</option>
+            <option value="ka">ქართული</option>
+            <option value="ru">Русский</option>
+        </select>
+    </nav>
+</header>
+
+<section id="home">
+    <div>
+        <div id="home-description">
+            <div class="home-description-left">
+                <div>
+                    <img src="images/image1.jpg" alt="Car 1">
+                </div>
+            </div>
+            <div class="home-description-right">
+                <div class="home-description-right-inside">
+                    <h1 data-lang-key="home_title">Cruise with Confidence</h1>
+                    <div class="mt-5">
+                        <p data-lang-key="home_description">Indigo Car Rental offers AWD Subaru Crosstrek and Forester models—perfect for exploring Georgia's mountains and roads. Reliable, safe, and built for every journey.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="image-container">
+            <img src="images/image2.jpg" alt="Car 1">
+            <img src="images/image3.jpg" alt="Car 2">
+        </div>
+    </div>
+
+    <div id="vehicles">
+        <div class="vehicles-left">
+            <div class="vehicles-inside">
+                <h1 data-lang-key="vehicles_title">Vehicles</h1>
+                <ul>
+                    <li data-lang-key="vehicles_desc_1">Modern AWD vehicles for Georgia’s diverse terrain.</li>
+                    <li data-lang-key="vehicles_desc_2">Ideal for mountains, gravel roads, village paths, and city streets.</li>
+                    <li data-lang-key="vehicles_desc_3">Designed for comfort, safety, and confidence.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="vehicles-right">
+            <div class="vehicles-inside">
+                <h1 data-lang-key="vehicles_select">Select from our top-notch fleet of cars for a smooth and comfortable ride.</h1>
+                <hr>
+                <p class="vehicle-subheading" data-lang-key="crosstrek_title">Compact SUVs: Subaru Crosstrek</p>
+                <p data-lang-key="crosstrek_description">Subaru Crosstrek is a compact AWD SUV, perfect for Georgia’s roads, mountains, and adventures.</p>
+                <hr>
+                <p class="vehicle-subheading" data-lang-key="forester_title">SUVs: Subaru Forester</p>
+                <p data-lang-key="forester_description">Subaru Forester offers AWD performance, comfort, safety, and space—built for adventure on every road.</p>
+            </div>
+        </div>
+    </div>
+    <div id="offer">
+        <div class="offer-left">
+            <div class="offer-left-inside">
+                <h1 data-lang-key="offer_title">Special Offer</h1>
+                <p class="mt-5" data-lang-key="offer_description">Rent for 3+ days and get a discounted daily rate! More days, more savings—book now and enjoy AWD comfort and reliability on every trip.</p>
+                <a href="#contact" class="book-now" data-lang-key="book_now">Book Now</a>
+            </div>
+        </div>
+        <div class="offer-right">
+            <div>
+                <img src="images/image4.png" alt="Car 3" loading="lazy">
+            </div>
+        </div>
+    </div>
+
+    <div id="gallery">
+        <h1 data-lang-key="gallery_title">Gallery</h1>
+        <div class="gallery-grid">
+            <img src="images/image_container1.jpg" alt="Gallery Image 1" loading="lazy">
+            <img src="images/image_container2.jpg" alt="Gallery Image 2" loading="lazy">
+            <img src="images/image_container3.jpg" alt="Gallery Image 3" loading="lazy">
+            <img src="images/image_container4.jpg" alt="Gallery Image 4" loading="lazy">
+            <img src="images/image_container5.jpg" alt="Gallery Image 5" loading="lazy">
+            <img src="images/image_container6.jpg" alt="Gallery Image 6" loading="lazy">
+            <img src="images/image_container7.jpg" alt="Gallery Image 7" loading="lazy">
+            <img src="images/image_container8.jpg" alt="Gallery Image 8" loading="lazy">
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h1 data-lang-key="contact_title">Contact Us</h1>
+    <p data-lang-key="contact_email">Email: <a href="mailto:icrkutaisi@gmail.com">icrkutaisi@gmail.com</a></p>
+    <p data-lang-key="contact_phone">Phone: <a href="tel:+995511558788">+995 511 55 87 88</a></p>
+    <p data-lang-key="contact_instagram">Instagram: <a href="https://www.instagram.com/indigocarrentalkutaisi" target="_blank">@indigocarrental</a></p>
+    <p data-lang-key="contact_facebook">Facebook: <a href="https://www.facebook.com/icrkutaisi" target="_blank">Indigo Car Rental</a></p>
+</section>
+
+<script>
+    const translations = {
+        en: {
+            title: "Indigo Car Rental",
+            nav_home: "Home",
+            nav_contact: "Contact",
+            nav_cars: "Cars",
+            home_title: "Cruise with Confidence",
+            home_description: "Indigo Car Rental offers AWD Subaru Crosstrek and Forester models—perfect for exploring Georgia's mountains and roads. Reliable, safe, and built for every journey.",
+            vehicles_title: "Vehicles",
+            vehicles_desc_1: "Modern AWD vehicles for Georgia’s diverse terrain.",
+            vehicles_desc_2: "Ideal for mountains, gravel roads, village paths, and city streets.",
+            vehicles_desc_3: "Designed for comfort, safety, and confidence.",
+            vehicles_select: "Select from our top-notch fleet of cars for a smooth and comfortable ride.",
+            crosstrek_title: "Compact SUVs: Subaru Crosstrek",
+            crosstrek_description: "Subaru Crosstrek is a compact AWD SUV, perfect for Georgia’s roads, mountains, and adventures.",
+            forester_title: "SUVs: Subaru Forester",
+            forester_description: "Subaru Forester offers AWD performance, comfort, safety, and space—built for adventure on every road.",
+            offer_title: "Special Offer",
+            offer_description: "Rent for 3+ days and get a discounted daily rate! More days, more savings—book now and enjoy AWD comfort and reliability on every trip.",
+            book_now: "Book Now",
+            gallery_title: "Gallery",
+            contact_title: "Contact Us",
+            contact_email: "Email: <a href='mailto:icrkutaisi@gmail.com'>icrkutaisi@gmail.com</a>",
+            contact_phone: "Phone: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
+            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
+        },
+        ka: {
+            title: "Indigo Car Rental",
+            nav_home: "მთავარი",
+            nav_contact: "კონტაქტი",
+            nav_cars: "მანქანები",
+            home_title: "მგზავრობა თავდაჯერებულად",
+            home_description: "Indigo Car Rental გთავაზობთ AWD Subaru Crosstrek და Forester მოდელებს — იდეალურია საქართველოს მთებისა და გზების შესასწავლად. საიმედო, უსაფრთხო და შექმნილი ყველა მოგზაურობისთვის.",
+            vehicles_title: "მანქანები",
+            vehicles_desc_1: "თანამედროვე AWD მანქანები საქართველოს მრავალფეროვანი რელიეფისთვის.",
+            vehicles_desc_2: "იდეალურია მთების, ხრეშიანი გზების, სოფლის ბილიკებისა და ქალაქის ქუჩებისთვის.",
+            vehicles_desc_3: "შექმნილია კომფორტის, უსაფრთხოებისა და თავდაჯერებულობისთვის.",
+            vehicles_select: "აირჩიეთ ჩვენი უმაღლესი ხარისხის მანქანების ფლოტიდან გლუვი და კომფორტული მგზავრობისთვის.",
+            crosstrek_title: "კომპაქტური SUV-ები: Subaru Crosstrek",
+            crosstrek_description: "Subaru Crosstrek არის კომპაქტური AWD SUV, იდეალური საქართველოს გზების, მთებისა და თავგადასავლებისთვის.",
+            forester_title: "SUV-ები: Subaru Forester",
+            forester_description: "Subaru Forester გთავაზობთ AWD შესრულებას, კომფორტს, უსაფრთხოებას და სივრცეს — შექმნილია თავგადასავლებისთვის ყველა გზაზე.",
+            offer_title: "სპეციალური შეთავაზება",
+            offer_description: "იქირავეთ 3+ დღით და მიიღეთ ფასდაკლებული დღიური ტარიფი! მეტი დღე, მეტი დანაზოგი — დაჯავშნეთ ახლა და ისიამოვნეთ AWD კომფორტითა და საიმედოობით ყველა მოგზაურობაში.",
+            book_now: "დაჯავშნე ახლა",
+            gallery_title: "გალერეა",
+            contact_title: "დაგვიკავშირდით",
+            contact_email: "ელფოსტა: <a href='mailto:icrkutaisi@gmail.com'>icrkutaisi@gmail.com</a>",
+            contact_phone: "ტელეფონი: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
+            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
+        },
+        ru: {
+            title: "Indigo Car Rental",
+            nav_home: "Главная",
+            nav_contact: "Контакты",
+            nav_cars: "Автомобили",
+            home_title: "Путешествуйте с уверенностью",
+            home_description: "Indigo Car Rental предлагает полноприводные модели Subaru Crosstrek и Forester — идеально подходят для исследования гор и дорог Грузии. Надежные, безопасные и созданы для любого путешествия.",
+            vehicles_title: "Автомобили",
+            vehicles_desc_1: "Современные полноприводные автомобили для разнообразной местности Грузии.",
+            vehicles_desc_2: "Идеальны для гор, гравийных дорог, деревенских троп и городских улиц.",
+            vehicles_desc_3: "Создан для комфорта, безопасности и уверенности.",
+            vehicles_select: "Выберите из нашего первоклассного автопарка для плавной и комфортной поездки.",
+            crosstrek_title: "Компактные внедорожники: Subaru Crosstrek",
+            crosstrek_description: "Subaru Crosstrek — это компактный полноприводный внедорожник, идеальный для дорог, гор и приключений в Грузии.",
+            forester_title: "Внедорожники: Subaru Forester",
+            forester_description: "Subaru Forester предлагает полноприводную производительность, комфорт, безопасность и пространство — создан для приключений на любой дороге.",
+            offer_title: "Специальное предложение",
+            offer_description: "Арендуйте на 3+ дня и получите скидку на суточную ставку! Чем больше дней, тем больше экономия — бронируйте сейчас и наслаждайтесь комфортом и надежностью полноприводных автомобилей в каждом путешествии.",
+            book_now: "Забронировать сейчас",
+            gallery_title: "Галерея",
+            contact_title: "Свяжитесь с нами",
+            contact_email: "Эл. почта: <a href='mailto:icrkutaisi@gmail.com'>icrkutaisi@gmail.com</a>",
+            contact_phone: "Телефон: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
+            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
+        }
+    };
+
+    function changeLanguage(lang) {
+        localStorage.setItem('language', lang);
+        document.querySelectorAll('[data-lang-key]').forEach(element => {
+            const key = element.getAttribute('data-lang-key');
+            if (element.tagName === 'P' && ['contact_email', 'contact_phone', 'contact_instagram', 'contact_facebook'].includes(key)) {
+                element.innerHTML = translations[lang][key];
+            } else {
+                element.textContent = translations[lang][key];
+            }
+        });
+        document.documentElement.lang = lang === 'en' ? 'en' : lang === 'ka' ? 'ka' : 'ru';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedLang = localStorage.getItem('language') || 'en';
+        document.querySelector('.language-switcher').value = savedLang;
+        changeLanguage(savedLang);
+    });
+</script>
+</body>
+</html>
