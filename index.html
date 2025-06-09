@@ -17,22 +17,21 @@
         header {
             background: linear-gradient(180deg, #1A1A1A, #000000);
             color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            height: 100px; /* Fixed height for consistency */
-            box-sizing: border-box; /* Ensure padding is included in height */
+            box-sizing: border-box;
         }
 
         header h1 {
             color: #7B5CD6;
             margin: 0;
             font-size: 1.8rem;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
 
         body h1 {
@@ -264,16 +263,29 @@
                 flex-direction: column;
                 text-align: center;
                 padding: 1rem;
+                min-height: auto;
+                position: static
             }
 
             header h1 {
                 font-size: 1.5rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.75rem;
             }
 
             nav {
                 flex-direction: column;
                 gap: 0.5rem;
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .language-switcher {
+                margin-top: 0.5rem;
+                width: 100%;
+                max-width: 150px;
             }
 
             body h1 {
@@ -353,12 +365,23 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 0.75rem;
+            }
+
             header h1 {
                 font-size: 1.2rem;
+                margin-bottom: 0.5rem;
             }
 
             nav a {
-                font-size: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .language-switcher {
+                font-size: 0.9rem;
+                padding: 0.4rem;
+                max-width: 120px;
             }
 
             body h1 {
@@ -503,7 +526,7 @@
     <h1 data-lang-key="contact_title">Contact Us</h1>
     <p data-lang-key="contact_email">Email: <a href="mailto:info@icrkutaisi.com">info@icrkutaisi.com</a></p>
     <p data-lang-key="contact_phone">Phone: <a href="tel:+995511558788">+995 511 55 87 88</a></p>
-    <p data-lang-key="contact_instagram">Instagram: <a href="https://www.instagram.com/indigocarrentalkutaisi"
+    <p data-lang-key="contact_instagram">Instagram: <a href="https://www.facebook.com/profile.php?id=61577189131267"
                                                        target="_blank">@indigocarrental</a></p>
     <p data-lang-key="contact_facebook">Facebook: <a href="https://www.facebook.com/icrkutaisi" target="_blank">Indigo
         Car Rental</a></p>
@@ -534,7 +557,7 @@
             contact_title: "Contact Us",
             contact_email: "Email: <a href='mailto:info@icrkutaisi.com'>info@icrkutaisi.com</a>",
             contact_phone: "Phone: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
-            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_instagram: "Instagram: <a href='https://www.facebook.com/profile.php?id=61577189131267' target='_blank'>@indigocarrental</a>",
             contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
         },
         ka: {
@@ -560,7 +583,7 @@
             contact_title: "დაგვიკავშირდით",
             contact_email: "ელფოსტა: <a href='mailto:info@icrkutaisi.com'>info@icrkutaisi.com</a>",
             contact_phone: "ტელეფონი: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
-            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_instagram: "Instagram: <a href='https://www.facebook.com/profile.php?id=61577189131267' target='_blank'>@indigocarrental</a>",
             contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
         },
         ru: {
@@ -586,7 +609,7 @@
             contact_title: "Свяжитесь с нами",
             contact_email: "Эл. почта: <a href='mailto:info@icrkutaisi.com'>info@icrkutaisi.com</a>",
             contact_phone: "Телефон: <a href='tel:+995511558788'>+995 511 55 87 88</a>",
-            contact_instagram: "Instagram: <a href='https://www.instagram.com/indigocarrentalkutaisi' target='_blank'>@indigocarrental</a>",
+            contact_instagram: "Instagram: <a href='https://www.facebook.com/profile.php?id=61577189131267' target='_blank'>@indigocarrental</a>",
             contact_facebook: "Facebook: <a href='https://www.facebook.com/icrkutaisi' target='_blank'>Indigo Car Rental</a>"
         }
     };

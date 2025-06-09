@@ -17,22 +17,21 @@
         header {
             background: linear-gradient(180deg, #1A1A1A, #000000);
             color: white;
-            padding: 2rem;
+            padding: 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
             position: sticky;
             top: 0;
             z-index: 100;
-            height: 100px; /* Fixed height for consistency */
-            box-sizing: border-box; /* Ensure padding is included in height */
+            box-sizing: border-box;
         }
 
         header h1 {
             color: #7B5CD6;
             margin: 0;
             font-size: 1.8rem;
-            white-space: nowrap; /* Prevent text wrapping */
+            white-space: nowrap;
         }
 
         nav {
@@ -130,16 +129,29 @@
                 flex-direction: column;
                 text-align: center;
                 padding: 1rem;
+                min-height: auto;
+                position: static
             }
 
             header h1 {
                 font-size: 1.5rem;
-                margin-bottom: 1rem;
+                margin-bottom: 0.75rem;
             }
 
             nav {
                 flex-direction: column;
                 gap: 0.5rem;
+                width: 100%;
+            }
+
+            nav a {
+                font-size: 1rem;
+            }
+
+            .language-switcher {
+                margin-top: 0.5rem;
+                width: 100%;
+                max-width: 150px;
             }
 
             .car-container {
@@ -163,12 +175,23 @@
         }
 
         @media (max-width: 480px) {
+            header {
+                padding: 0.75rem;
+            }
+
             header h1 {
                 font-size: 1.2rem;
+                margin-bottom: 0.5rem;
             }
 
             nav a {
-                font-size: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .language-switcher {
+                font-size: 0.9rem;
+                padding: 0.4rem;
+                max-width: 120px;
             }
 
             section {
@@ -216,7 +239,10 @@
         </div>
         <div class="car-details">
             <h2 data-lang-key="crosstrek_title">Subaru Crosstrek</h2>
-            <p data-lang-key="crosstrek_description">2020 to 2023 models feature a 2.0L petrol engine, automatic transmission, and Subaru’s trusted symmetrical All-Wheel Drive (AWD) system for extra stability on all road types.<br>Fuel efficiency: 6.9–7.8 L/100 km, depending on terrain and driving style.<br>Each vehicle is fully insured with comprehensive coverage.</p>
+            <p data-lang-key="crosstrek_description">2020 to 2023 models feature a 2.0L petrol engine, automatic
+                transmission, and Subaru’s trusted symmetrical All-Wheel Drive (AWD) system for extra stability on all
+                road types.<br>Fuel efficiency: 6.9–7.8 L/100 km, depending on terrain and driving style.<br>Each
+                vehicle is fully insured with comprehensive coverage.</p>
             <ul data-lang-key="crosstrek_prices">
                 <li>$50 per day for 1–2 day rental</li>
                 <li>$45 per day for 3 or more days</li>
@@ -229,7 +255,10 @@
         </div>
         <div class="car-details">
             <h2 data-lang-key="forester_title">Subaru Forester</h2>
-            <p data-lang-key="forester_description">Our models from 2020 to 2023 come equipped with a 2.5L petrol engine, automatic transmission, and Subaru's renowned symmetrical All-Wheel Drive (AWD) system — ideal for mountains, cities, and everything in between.<br>Fuel efficiency: 7.4–8.2 L/100 km, depending on driving conditions.<br>Fully covered by comprehensive insurance for your peace of mind.</p>
+            <p data-lang-key="forester_description">Our models from 2020 to 2023 come equipped with a 2.5L petrol
+                engine, automatic transmission, and Subaru's renowned symmetrical All-Wheel Drive (AWD) system — ideal
+                for mountains, cities, and everything in between.<br>Fuel efficiency: 7.4–8.2 L/100 km, depending on
+                driving conditions.<br>Fully covered by comprehensive insurance for your peace of mind.</p>
             <ul data-lang-key="forester_prices">
                 <li>$60 per day for 1–2 day rental</li>
                 <li>$55 per day for 3 or more days</li>
@@ -260,10 +289,10 @@
             nav_cars: "მანქანები",
             cars_title: "ჩვენი მანქანები",
             crosstrek_title: "Subaru Crosstrek 2020 - 2023",
-            crosstrek_description: "2020-2023 წლების მოდელები აღჭურვილია 2.0 ლიტრიანი ბენზინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს სანდო სიმეტრიული სრულამძრავიანი (AWD) სისტემით, რაც უზრუნველყოფს დამატებით სტაბილურობას ყველა ტიპის გზაზე.<br>საწვავის ეფექტურობა: 6.9–7.8 ლ/100 კმ, რაც დამოკიდებულია რელიეფსა და მართვის სტილზე.<br>თითოეული მანქანა სრულად დაზღვეულია ყოვლისმომცველი დაზღვევით.",
+            crosstrek_description: "2020-2023 წლების მოდელები აღჭურვილია 2.0 ლიტრიანი ბензინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს სანდო სიმეტრიული სრულამძრავიანი (AWD) სისტემით, რაც უზრუნველყოფს დამატებით სტაბილურობას ყველა ტიპის გზაზე.<br>საწვავის ეფექტურობა: 6.9–7.8 ლ/100 კმ, რაც დამოკიდებულია რელიეფსა და მართვის სტილზე.<br>თითოეული მანქანა სრულად დაზღვეულია ყოვლისმომცველი დაზღვევით.",
             crosstrek_prices: "<li>$50 დღეში 1-2 დღიანი ქირაობისთვის</li><li>$45 დღეში 3 ან მეტი დღისთვის</li>",
             forester_title: "Subaru Forester 2020 - 2023",
-            forester_description: "2020-2023 წლების მოდელები აღჭურვილია 2.5 ლიტრიანი ბენზინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს ცნობილი სიმეტრიული სრულამძრავიანი (AWD) სისტემით — იდეალურია მთების, ქალაქებისა და ყველა სხვა გზისთვის.<br>საწვავის ეფექტურობა: 7.4–8.2 ლ/100 კმ, მართვის პირობებიდან გამომდინარე.<br>სრულად დაფარულია ყოვლისმომცველი დაზღვევით თქვენი სიმშვიდისთვის.",
+            forester_description: "2020-2023 წლების მოდელები აღჭურვილია 2.5 ლიტრიანი ბензინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს ცნობილი სიმეტრიული სრულამძრავიანი (AWD) სისტემით — იდეალურია მთების, ქალაქებისა და ყველა სხვა გზისთვის.<br>საწვავის ეფექტურობა: 7.4–8.2 ლ/100 კმ, მართვის პირობებიდან გამომდინარე.<br>სრულად დაფარულია ყოვლისმომცველი დაზღვევით თქვენი სიმშვიდისთვის.",
             forester_prices: "<li>$60 დღეში 1-2 დღიანი ქირაობისთვის</li><li>$55 დღეში 3 ან მეტი დღისთვის</li>"
         },
         ru: {
