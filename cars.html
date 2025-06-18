@@ -3,20 +3,52 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://fonts.googleapis.com/css?family=Syne' rel='stylesheet'>
     <title data-lang-key="title">Indigo Car Rental - Cars</title>
+    <meta name="description"
+          content="Explore our fleet of AWD Subaru Crosstrek and Forester vehicles for rent in Kutaisi, Georgia. Affordable rates, full insurance, and perfect for all terrains.">
+    <meta name="keywords"
+          content="Subaru Crosstrek rental Kutaisi, Subaru Forester rental Kutaisi, car rental Kutaisi, AWD car hire Georgia, Indigo Car Rental cars">
+    <meta name="robots" content="index, follow">
+
+    <!-- Canonical and Hreflang Tags -->
+    <link rel="canonical" href="https://icrkutaisi.com/cars.html">
+    <link rel="alternate" hreflang="en" href="https://icrkutaisi.com/en/cars.html">
+    <link rel="alternate" hreflang="ka" href="https://icrkutaisi.com/ka/cars.html">
+    <link rel="alternate" hreflang="ru" href="https://icrkutaisi.com/ru/cars.html">
+
+    <!-- Open Graph Meta -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Car Rental Fleet in Kutaisi, Georgia | ICR">
+    <meta property="og:description"
+          content="Rent AWD Subaru Crosstrek or Forester in Kutaisi. Perfect for Georgia’s roads, with competitive prices and full insurance.">
+    <meta property="og:url" content="https://icrkutaisi.com/cars.html">
+    <meta property="og:site_name" content="ICR Kutaisi">
+    <meta property="og:image" content="https://icrkutaisi.com/images/crosstrek.png">
+
+    <!-- Twitter Card Meta -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Subaru Car Rentals in Kutaisi | ICR">
+    <meta name="twitter:description"
+          content="Discover our Subaru Crosstrek and Forester rentals in Kutaisi, Georgia. Affordable, reliable, and ready for any adventure.">
+    <meta name="twitter:image" content="https://icrkutaisi.com/images/crosstrek.png">
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700&display=swap">
+
+    <!-- Minified CSS -->
     <style>
         body {
-            font-family: 'Syne', sans-serif;
+            font-family: Syne, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(180deg, #1A1A1A, #000000);
-            color: #fff;
+            background: linear-gradient(180deg, #1A1A1A, #000);
+            color: #fff
         }
 
         header {
-            background: linear-gradient(180deg, #1A1A1A, #000000);
-            color: white;
+            background: linear-gradient(180deg, #1A1A1A, #000);
+            color: #fff;
             padding: 1.5rem;
             display: flex;
             justify-content: space-between;
@@ -24,63 +56,64 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-sizing: border-box;
+            box-sizing: border-box
         }
 
         header h1 {
             color: #7B5CD6;
             margin: 0;
             font-size: 1.8rem;
-            white-space: nowrap;
+            white-space: nowrap
         }
 
         nav {
             display: flex;
             gap: 1rem;
-            align-items: center;
+            align-items: center
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            font-size: 1.1rem;
+            font-size: 1.1rem
         }
 
         nav a:hover {
-            color: #FFD700;
+            color: #FFD700
         }
 
         .language-switcher {
-            background-color: #1A1A1A;
-            color: white;
+            background: #1A1A1A;
+            color: #fff;
             border: 1px solid #7B5CD6;
-            padding: 0.5rem;
+            padding: .5rem;
             font-size: 1rem;
-            font-family: 'Syne', sans-serif;
-            cursor: pointer;
+            font-family: Syne, sans-serif;
+            cursor: pointer
         }
 
         .language-switcher:hover {
-            background-color: #7B5CD6;
-            color: #FFD700;
+            background: #7B5CD6;
+            color: #FFD700
         }
 
-        body h1 {
+        h1 {
             color: #7B5CD6;
             margin: 2rem;
+            text-align: center
         }
 
-        body p {
+        p {
             font-size: 1.3rem;
-            line-height: 1.6;
+            line-height: 1.6
         }
 
         section {
-            padding: 2rem;
+            padding: 2rem
         }
 
         #cars {
-            text-align: center;
+            text-align: center
         }
 
         .car-container {
@@ -90,146 +123,172 @@
             gap: 2rem;
             text-align: left;
             width: 60%;
-            border: 2px solid white;
+            border: 2px solid #fff;
             padding: 1rem;
+            border-radius: 8px
         }
 
         .car-image {
-            flex: 1;
+            flex: 1
         }
 
         .car-image img {
             width: 100%;
             height: 200px;
             object-fit: cover;
+            border-radius: 4px
         }
 
         .car-image img:hover {
             transform: scale(1.05);
-            transition: transform 0.3s ease;
+            transition: transform .3s ease
         }
 
         .car-details {
             flex: 1;
-            padding: 1rem;
+            padding: 1rem
         }
 
         .car-details h2 {
             color: #7B5CD6;
             font-size: 1.6rem;
-            margin: 0 0 1rem;
+            margin: 0 0 1rem
         }
 
         .car-details p {
             font-size: 1.3rem;
             line-height: 1.6;
-            margin: 0;
+            margin: 0 0 1rem
         }
 
         .car-details ul {
             font-size: 1.3rem;
             line-height: 1.6;
             margin: 0;
-            padding-left: 20px;
+            padding-left: 20px
         }
 
-        /* Responsive Design */
+        .book-now {
+            display: inline-block;
+            padding: .8rem 1.5rem;
+            background: #7B5CD6;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 1rem
+        }
+
+        .book-now:hover {
+            background: #FFD700;
+            color: #000
+        }
+
         @media (max-width: 768px) {
             header {
                 flex-direction: column;
                 text-align: center;
-                padding: 1rem;
-                min-height: auto;
-                position: static
+                padding: 1rem
             }
 
             header h1 {
                 font-size: 1.5rem;
-                margin-bottom: 0.75rem;
+                margin-bottom: .75rem
             }
 
             nav {
                 flex-direction: column;
-                gap: 0.5rem;
-                width: 100%;
+                gap: .5rem;
+                width: 100%
             }
 
             nav a {
-                font-size: 1rem;
+                font-size: 1rem
             }
 
             .language-switcher {
-                margin-top: 0.5rem;
+                margin-top: .5rem;
                 width: 100%;
-                max-width: 150px;
+                max-width: 150px
+            }
+
+            h1 {
+                font-size: 1.6rem
             }
 
             .car-container {
                 flex-direction: column;
                 margin: 1rem auto;
                 gap: 1rem;
-                width: 80%;
+                width: 80%
             }
 
             .car-image img {
-                height: 150px;
+                height: 150px
             }
 
             .car-details h2 {
-                font-size: 1.4rem;
+                font-size: 1.4rem
             }
 
             .car-details p, .car-details ul {
-                font-size: 1rem;
+                font-size: 1rem
             }
         }
 
         @media (max-width: 480px) {
             header {
-                padding: 0.75rem;
+                padding: .75rem
             }
 
             header h1 {
                 font-size: 1.2rem;
-                margin-bottom: 0.5rem;
+                margin-bottom: .5rem
             }
 
             nav a {
-                font-size: 0.9rem;
+                font-size: .9rem
             }
 
             .language-switcher {
-                font-size: 0.9rem;
-                padding: 0.4rem;
-                max-width: 120px;
+                font-size: .9rem;
+                padding: .4rem;
+                max-width: 120px
             }
 
             section {
-                padding: 1rem;
+                padding: 1rem
             }
 
             .car-container {
-                width: 90%;
+                width: 90%
             }
 
             .car-image img {
-                height: 120px;
+                height: 120px
             }
 
             .car-details h2 {
-                font-size: 1.2rem;
+                font-size: 1.2rem
             }
 
             .car-details p, .car-details ul {
-                font-size: 1rem;
+                font-size: 1rem
             }
         }
     </style>
 </head>
 <body>
+<!--
+    IMPORTANT: To ensure Google indexes this page, verify server-side configuration:
+    - Check .htaccess or Nginx for unintended 301/302 redirects.
+    - Ensure https://icrkutaisi.com/cars.html resolves without redirecting.
+    - Confirm robots.txt allows crawling (e.g., Allow: /).
+    - Test with `curl -I https://icrkutaisi.com/cars.html` or httpstatus.io.
+    - Recommendation: Optimize images (e.g., convert to WebP, compress) for better performance.
+-->
 <header>
     <h1 data-lang-key="title">Indigo Car Rental</h1>
-    <nav>
+    <nav aria-label="Main navigation">
         <a href="index.html#home" data-lang-key="nav_home">Home</a>
         <a href="index.html#contact" data-lang-key="nav_contact">Contact</a>
         <a href="cars.html" data-lang-key="nav_cars">Cars</a>
@@ -241,43 +300,147 @@
     </nav>
 </header>
 
-<section id="cars">
-    <h1 data-lang-key="cars_title">Our Cars</h1>
-    <div class="car-container">
-        <div class="car-image">
-            <img src="images/crosstrek.png" alt="Subaru Crosstrek" loading="lazy">
+<main>
+    <section id="cars" aria-labelledby="cars-title">
+        <h1 id="cars-title" data-lang-key="cars_title">Our Cars</h1>
+        <p data-lang-key="cars_intro">Choose from our reliable AWD Subaru Crosstrek and Forester models, perfect for
+            exploring Kutaisi and Georgia’s diverse landscapes. All vehicles are fully insured and maintained for your
+            safety and comfort.</p>
+        <div class="car-container" role="region" aria-labelledby="crosstrek-title">
+            <div class="car-image">
+                <img src="images/crosstrek.png" alt="Subaru Crosstrek 2020-2023 for rent in Kutaisi" loading="eager">
+            </div>
+            <div class="car-details">
+                <h2 id="crosstrek-title" data-lang-key="crosstrek_title">Subaru Crosstrek 2020 - 2023</h2>
+                <p data-lang-key="crosstrek_description">Featuring a 2.0L petrol engine, automatic transmission, and
+                    Subaru’s symmetrical All-Wheel Drive (AWD), the Crosstrek offers stability on all terrains. Fuel
+                    efficiency ranges from 6.9–7.8 L/100 km, depending on driving conditions. Fully insured for your
+                    peace of mind.</p>
+                <ul data-lang-key="crosstrek_prices">
+                    <li>$50 per day for 1–2 day rentals</li>
+                    <li>$45 per day for 3+ day rentals</li>
+                </ul>
+                <a href="index.html#contact" class="book-now" data-lang-key="book_now">Book Now</a>
+            </div>
         </div>
-        <div class="car-details">
-            <h2 data-lang-key="crosstrek_title">Subaru Crosstrek</h2>
-            <p data-lang-key="crosstrek_description">2020 to 2023 models feature a 2.0L petrol engine, automatic
-                transmission, and Subaru’s trusted symmetrical All-Wheel Drive (AWD) system for extra stability on all
-                road types.<br>Fuel efficiency: 6.9–7.8 L/100 km, depending on terrain and driving style.<br>Each
-                vehicle is fully insured with comprehensive coverage.</p>
-            <ul data-lang-key="crosstrek_prices">
-                <li>$50 per day for 1–2 day rental</li>
-                <li>$45 per day for 3 or more days</li>
-            </ul>
+        <div class="car-container" role="region" aria-labelledby="forester-title">
+            <div class="car-image">
+                <img src="images/forester.png" alt="Subaru Forester 2020-2023 for rent in Kutaisi" loading="lazy">
+            </div>
+            <div class="car-details">
+                <h2 id="forester-title" data-lang-key="forester_title">Subaru Forester 2020 - 2023</h2>
+                <p data-lang-key="forester_description">Equipped with a 2.5L petrol engine, automatic transmission, and
+                    Subaru’s renowned AWD system, the Forester is ideal for mountains, cities, and beyond. Fuel
+                    efficiency is 7.4–8.2 L/100 km, based on conditions. Includes comprehensive insurance.</p>
+                <ul data-lang-key="forester_prices">
+                    <li>$60 per day for 1–2 day rentals</li>
+                    <li>$55 per day for 3+ day rentals</li>
+                </ul>
+                <a href="index.html#contact" class="book-now" data-lang-key="book_now">Book Now</a>
+            </div>
         </div>
-    </div>
-    <div class="car-container">
-        <div class="car-image">
-            <img src="images/forester.png" alt="Subaru Forester" loading="lazy">
-        </div>
-        <div class="car-details">
-            <h2 data-lang-key="forester_title">Subaru Forester</h2>
-            <p data-lang-key="forester_description">Our models from 2020 to 2023 come equipped with a 2.5L petrol
-                engine, automatic transmission, and Subaru's renowned symmetrical All-Wheel Drive (AWD) system — ideal
-                for mountains, cities, and everything in between.<br>Fuel efficiency: 7.4–8.2 L/100 km, depending on
-                driving conditions.<br>Fully covered by comprehensive insurance for your peace of mind.</p>
-            <ul data-lang-key="forester_prices">
-                <li>$60 per day for 1–2 day rental</li>
-                <li>$55 per day for 3 or more days</li>
-            </ul>
-        </div>
-    </div>
-</section>
+    </section>
+</main>
 
-<script>
+<!-- Structured Data for LocalBusiness and Cars -->
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Indigo Car Rental",
+        "description": "Affordable car rental in Kutaisi, Georgia, offering AWD Subaru vehicles for airport pickups and travel across Georgia.",
+        "url": "https://icrkutaisi.com/cars.html",
+        "telephone": "+995511558788",
+        "email": "info@icrkutaisi.com",
+        "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Kutaisi",
+            "addressRegion": "Imereti",
+            "addressCountry": "GE"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 42.2480,
+            "longitude": 42.7070
+        },
+        "openingHours": "Mo-Su 08:00-20:00",
+        "sameAs": [
+            "https://www.instagram.com/indigocarrentalkutaisi",
+            "https://www.facebook.com/profile.php?id=61577189131267"
+        ],
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Car Rental Fleet",
+            "itemListElement": [
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Subaru Crosstrek 2020-2023",
+                        "vehicleEngine": {
+                            "@type": "EngineSpecification",
+                            "engineDisplacement": "2.0L",
+                            "fuelType": "Petrol"
+                        },
+                        "driveWheelConfiguration": "AllWheelDrive",
+                        "fuelEfficiency": "6.9-7.8 L/100 km"
+                    },
+                    "priceSpecification": [
+                        {
+                            "@type": "UnitPriceSpecification",
+                            "price": 50,
+                            "priceCurrency": "USD",
+                            "unitCode": "DAY",
+                            "validFrom": "1",
+                            "validThrough": "2"
+                        },
+                        {
+                            "@type": "UnitPriceSpecification",
+                            "price": 45,
+                            "priceCurrency": "USD",
+                            "unitCode": "DAY",
+                            "minPrice": "3"
+                        }
+                    ]
+                },
+                {
+                    "@type": "Offer",
+                    "itemOffered": {
+                        "@type": "Car",
+                        "name": "Subaru Forester 2020-2023",
+                        "vehicleEngine": {
+                            "@type": "EngineSpecification",
+                            "engineDisplacement": "2.5L",
+                            "fuelType": "Petrol"
+                        },
+                        "driveWheelConfiguration": "AllWheelDrive",
+                        "fuelEfficiency": "7.4-8.2 L/100 km"
+                    },
+                    "priceSpecification": [
+                        {
+                            "@type": "UnitPriceSpecification",
+                            "price": 60,
+                            "priceCurrency": "USD",
+                            "unitCode": "DAY",
+                            "validFrom": "1",
+                            "validThrough": "2"
+                        },
+                        {
+                            "@type": "UnitPriceSpecification",
+                            "price": 55,
+                            "priceCurrency": "USD",
+                            "unitCode": "DAY",
+                            "minPrice": "3"
+                        }
+                    ]
+                }
+            ]
+        }
+    }
+</script>
+
+<!-- Language Switching Script -->
+<script defer>
     const translations = {
         en: {
             title: "Indigo Car Rental - Cars",
@@ -285,12 +448,14 @@
             nav_contact: "Contact",
             nav_cars: "Cars",
             cars_title: "Our Cars",
+            cars_intro: "Choose from our reliable AWD Subaru Crosstrek and Forester models, perfect for exploring Kutaisi and Georgia’s diverse landscapes. All vehicles are fully insured and maintained for your safety and comfort.",
             crosstrek_title: "Subaru Crosstrek 2020 - 2023",
-            crosstrek_description: "2020 to 2023 models feature a 2.0L petrol engine, automatic transmission, and Subaru’s trusted symmetrical All-Wheel Drive (AWD) system for extra stability on all road types.<br>Fuel efficiency: 6.9–7.8 L/100 km, depending on terrain and driving style.<br>Each vehicle is fully insured with comprehensive coverage.",
-            crosstrek_prices: "<li>$50 per day for 1–2 day rental</li><li>$45 per day for 3 or more days</li>",
+            crosstrek_description: "Featuring a 2.0L petrol engine, automatic transmission, and Subaru’s symmetrical All-Wheel Drive (AWD), the Crosstrek offers stability on all terrains. Fuel efficiency ranges from 6.9–7.8 L/100 km, depending on driving conditions. Fully insured for your peace of mind.",
+            crosstrek_prices: "<li>$50 per day for 1–2 day rentals</li><li>$45 per day for 3+ day rentals</li>",
             forester_title: "Subaru Forester 2020 - 2023",
-            forester_description: "Our models from 2020 to 2023 come equipped with a 2.5L petrol engine, automatic transmission, and Subaru's renowned symmetrical All-Wheel Drive (AWD) system — ideal for mountains, cities, and everything in between.<br>Fuel efficiency: 7.4–8.2 L/100 km, depending on driving conditions.<br>Fully covered by comprehensive insurance for your peace of mind.",
-            forester_prices: "<li>$60 per day for 1–2 day rental</li><li>$55 per day for 3 or more days</li>"
+            forester_description: "Equipped with a 2.5L petrol engine, automatic transmission, and Subaru’s renowned AWD system, the Forester is ideal for mountains, cities, and beyond. Fuel efficiency is 7.4–8.2 L/100 km, based on conditions. Includes comprehensive insurance.",
+            forester_prices: "<li>$60 per day for 1–2 day rentals</li><li>$55 per day for 3+ day rentals</li>",
+            book_now: "Book Now"
         },
         ka: {
             title: "Indigo Car Rental - მანქანები",
@@ -298,12 +463,14 @@
             nav_contact: "კონტაქტი",
             nav_cars: "მანქანები",
             cars_title: "ჩვენი მანქანები",
+            cars_intro: "აირჩიეთ ჩვენი საიმედო AWD Subaru Crosstrek და Forester მოდელები, იდეალური ქუთაისისა და საქართველოს მრავალფეროვანი ლანდშაფტების შესასწავლად. ყველა მანქანა სრულად დაზღვეულია და მოვლილი თქვენი უსაფრთხოებისა და კომფორტისთვის.",
             crosstrek_title: "Subaru Crosstrek 2020 - 2023",
-            crosstrek_description: "2020-2023 წლების მოდელები აღჭურვილია 2.0 ლიტრიანი ბензინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს სანდო სიმეტრიული სრულამძრავიანი (AWD) სისტემით, რაც უზრუნველყოფს დამატებით სტაბილურობას ყველა ტიპის გზაზე.<br>საწვავის ეფექტურობა: 6.9–7.8 ლ/100 კმ, რაც დამოკიდებულია რელიეფსა და მართვის სტილზე.<br>თითოეული მანქანა სრულად დაზღვეულია ყოვლისმომცველი დაზღვევით.",
-            crosstrek_prices: "<li>$50 დღეში 1-2 დღიანი ქირაობისთვის</li><li>$45 დღეში 3 ან მეტი დღისთვის</li>",
+            crosstrek_description: "აღჭურვილია 2.0 ლიტრიანი ბензინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს სიმეტრიული სრულამძრავიანი (AWD) სისტემით, Crosstrek გთავაზობთ სტაბილურობას ყველა რელიეფზე. საწვავის ეფექტურობა 6.9–7.8 ლ/100 კმ, მართვის პირობებიდან გამომდინარე. სრულად დაზღვეული თქვენი სიმშვიდისთვის.",
+            crosstrek_prices: "<li>$50 დღეში 1–2 დღიანი ქირაობისთვის</li><li>$45 დღეში 3+ დღიანი ქირაობისთვის</li>",
             forester_title: "Subaru Forester 2020 - 2023",
-            forester_description: "2020-2023 წლების მოდელები აღჭურვილია 2.5 ლიტრიანი ბензინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს ცნობილი სიმეტრიული სრულამძრავიანი (AWD) სისტემით — იდეალურია მთების, ქალაქებისა და ყველა სხვა გზისთვის.<br>საწვავის ეფექტურობა: 7.4–8.2 ლ/100 კმ, მართვის პირობებიდან გამომდინარე.<br>სრულად დაფარულია ყოვლისმომცველი დაზღვევით თქვენი სიმშვიდისთვის.",
-            forester_prices: "<li>$60 დღეში 1-2 დღიანი ქირაობისთვის</li><li>$55 დღეში 3 ან მეტი დღისთვის</li>"
+            forester_description: "აღჭურვილია 2.5 ლიტრიანი ბენზინის ძრავით, ავტომატური გადაცემათა კოლოფით და Subaru-ს ცნობილი AWD სისტემით, Forester იდეალურია მთების, ქალაქებისა და სხვა გზებისთვის. საწვავის ეფექტურობა 7.4–8.2 ლ/100 კმ, პირობებიდან გამომდინარე. მოიცავს ყოვლისმომცველ დაზღვევას.",
+            forester_prices: "<li>$60 დღეში 1–2 დღიანი ქირაობისთვის</li><li>$55 დღეში 3+ დღიანი ქირაობისთვის</li>",
+            book_now: "დაჯავშნე ახლა"
         },
         ru: {
             title: "Indigo Car Rental - Автомобили",
@@ -311,12 +478,14 @@
             nav_contact: "Контакты",
             nav_cars: "Автомобили",
             cars_title: "Наши автомобили",
+            cars_intro: "Выберите наши надежные полноприводные модели Subaru Crosstrek и Forester, идеально подходящие для исследования Кутаиси и разнообразных ландшафтов Грузии. Все автомобили полностью застрахованы и обслужены для вашего комфорта и безопасности.",
             crosstrek_title: "Subaru Crosstrek 2020 - 2023",
-            crosstrek_description: "Модели 2020–2023 годов оснащены бензиновым двигателем объемом 2.0 л, автоматической трансмиссией и надежной симметричной системой полного привода (AWD) от Subaru для дополнительной устойчивости на любых дорогах.<br>Расход топлива: 6.9–7.8 л/100 км в зависимости от рельефа и стиля вождения.<br>Каждый автомобиль полностью застрахован с полной страховкой.",
-            crosstrek_prices: "<li>$50 в день за 1–2 дня аренды</li><li>$45 в день за 3 дня и более</li>",
+            crosstrek_description: "Оснащен бензиновым двигателем 2.0 л, автоматической трансмиссией и симметричной системой полного привода (AWD) от Subaru, Crosstrek обеспечивает устойчивость на любых поверхностях. Расход топлива составляет 6.9–7.8 л/100 км в зависимости от условий вождения. Полностью застрахован для вашего спокойствия.",
+            crosstrek_prices: "<li>$50 в день за 1–2 дня аренды</li><li>$45 в день за 3+ дня аренды</li>",
             forester_title: "Subaru Forester 2020 - 2023",
-            forester_description: "Модели 2020–2023 годов оснащены бензиновым двигателем объемом 2.5 л, автоматической трансмиссией и известной симметричной системой полного привода (AWD) от Subaru — идеально подходят для гор, городов и любых дорог.<br>Расход топлива: 7.4–8.2 л/100 км в зависимости от условий вождения.<br>Полностью покрыты полной страховкой для вашего спокойствия.",
-            forester_prices: "<li>$60 в день за 1–2 дня аренды</li><li>$55 в день за 3 дня и более</li>"
+            forester_description: "Оснащен бензиновым двигателем 2.5 л, автоматической трансмиссией и известной системой AWD от Subaru, Forester идеально подходит для гор, городов и других дорог. Расход топлива 7.4–8.2 л/100 км в зависимости от условий. Включает полную страховку.",
+            forester_prices: "<li>$60 в день за 1–2 дня аренды</li><li>$55 в день за 3+ дня аренды</li>",
+            book_now: "Забронировать сейчас"
         }
     };
 
@@ -331,7 +500,7 @@
                 element.innerHTML = content;
             }
         });
-        document.documentElement.lang = lang === 'en' ? 'en' : lang === 'ka' ? 'ka' : 'ru';
+        document.documentElement.lang = lang;
     }
 
     document.addEventListener('DOMContentLoaded', () => {
